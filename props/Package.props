@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <Product>Acceptable</Product>
+    <Authors>devnkeep</Authors>
+    <Copyright>Copyright (c) 2022 devnkeep</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
