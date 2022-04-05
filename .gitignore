@@ -6,3 +6,5 @@
 obj
 bin
 Build
+
+props/Version.props

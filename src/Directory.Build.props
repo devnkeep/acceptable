@@ -7,6 +7,14 @@
     <Import Project="..\props\Project.props" />
   </ImportGroup>
 
+  <ImportGroup Condition=" Exists('..\props\Version.props') ">
+    <Import Project="..\props\Version.props" />
+  </ImportGroup>
+
+  <ImportGroup Condition=" !Exists('..\props\Version.props') ">
+    <Import Project="..\props\Version.Default.props" />
+  </ImportGroup>
+
   <ImportGroup Condition=" '$(MSBuildProjectName.EndsWith(`Tests`))' ">
     <Import Project="..\props\Tests.props" />
   </ImportGroup>

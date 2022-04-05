@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Props", "Props", "{22729404
 		..\props\Package.props = ..\props\Package.props
 		..\props\Project.props = ..\props\Project.props
 		..\props\Tests.props = ..\props\Tests.props
+		..\props\Version.Default.props = ..\props\Version.Default.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A2846992-85E4-48BB-B22B-45071EB12964}"
