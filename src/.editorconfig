@@ -19,15 +19,18 @@ dotnet_diagnostic.CA1056.severity = suggestion
 # CA1810: Initialize reference type static fields inline
 dotnet_diagnostic.CA1810.severity = none
 
+# IDE0044: Add readonly modifier
+dotnet_diagnostic.IDE0044.severity = warning
+
 # IDE0055: Fix formatting
 dotnet_diagnostic.IDE0055.severity = warning
-
-# IDE0065: Using directive placement
-csharp_using_directive_placement = inside_namespace:warning
 
 # IDE0055: Organize usings
 dotnet_sort_system_directives_first = true
 dotnet_separate_import_directive_groups = true
+
+# IDE0065: Using directive placement
+csharp_using_directive_placement = inside_namespace:warning
 
 # IDE0090: Simplify new expression
 # Disabled due to conflict with SA1000.
