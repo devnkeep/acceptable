@@ -8,6 +8,6 @@
         /// <summary>
         /// Gets an assertion name.
         /// </summary>
-        public abstract string Name { get; }
+        string Name { get; }
     }
 }
