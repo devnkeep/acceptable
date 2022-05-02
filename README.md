@@ -1,2 +1,2 @@
-# acceptable
-A tool for building, configuring and running acceptance tests for various applications.
+# systematic
+A set of tools for creating, configuring and running system tests for various types of applications.
