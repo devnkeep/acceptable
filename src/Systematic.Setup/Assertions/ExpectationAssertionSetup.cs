@@ -10,6 +10,6 @@
         where TExpectation : DataItem
     {
         /// <inheritdoc />
-        public DataIdentifier ExpectationId { get; set; } = DataIdentifier.Empty;
+        public DataIdentifier ExpectationId { get; set; }
     }
 }

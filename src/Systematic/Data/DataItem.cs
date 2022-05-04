@@ -10,7 +10,7 @@
         /// <summary>
         /// Gets an ID of a data item.
         /// </summary>
-        public DataIdentifier Id { get; private set; } = DataIdentifier.Empty;
+        public DataIdentifier Id { get; private set; }
 
         /// <summary>
         /// Sets an ID of a data item.
@@ -20,10 +20,10 @@
         /// <exception cref="ArgumentException">Data identifier cannot be null or empty.</exception>
         public void Identify(DataIdentifier id)
         {
-            if (!Id.IsEmpty)
+            if (Id != default)
                 throw new InvalidOperationException("Data identifier cannot be changed after being set.");
 
-            if (id.IsEmpty)
+            if (id == default)
                 throw new ArgumentException("Data identifier cannot be null or empty.", nameof(id));
 
             Id = id;

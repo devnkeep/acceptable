@@ -17,10 +17,10 @@
         public IReadableScope Scope { get; private set; } = DataScope.Undefined;
 
         /// <inheritdoc />
-        public DataIdentifier InputId { get; private set; } = DataIdentifier.Empty;
+        public DataIdentifier InputId { get; private set; }
 
         /// <inheritdoc />
-        public DataIdentifier OutputId { get; private set; } = DataIdentifier.Empty;
+        public DataIdentifier OutputId { get; private set; }
 
         /// <inheritdoc />
         public void SpecifyScope(IReadableScope scope) => Scope = scope;
@@ -57,7 +57,7 @@
         /// <param name="data">Output data.</param>
         private void IdentifyOutputData(DataItem data)
         {
-            if (OutputId.IsEmpty)
+            if (OutputId == default)
                 return;
 
             data.Identify(OutputId);

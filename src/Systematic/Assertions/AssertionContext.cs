@@ -15,7 +15,7 @@
         public IReadableScope Scope { get; private set; } = DataScope.Undefined;
 
         /// <inheritdoc />
-        public DataIdentifier InputId { get; private set; } = DataIdentifier.Empty;
+        public DataIdentifier InputId { get; private set; }
 
         /// <inheritdoc />
         public void SpecifyScope(IReadableScope scope) => Scope = scope;

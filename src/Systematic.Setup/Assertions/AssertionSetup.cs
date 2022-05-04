@@ -11,6 +11,6 @@
         public abstract string Name { get; }
 
         /// <inheritdoc />
-        public DataIdentifier InputId { get; set; } = DataIdentifier.Empty;
+        public DataIdentifier InputId { get; set; }
     }
 }

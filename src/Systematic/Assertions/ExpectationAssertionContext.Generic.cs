@@ -24,7 +24,7 @@
         public ExpectationAssertionContext(ExpectationAssertion<TInput> assertion) => _assertion = assertion;
 
         /// <inheritdoc />
-        public DataIdentifier ExpectationId { get; private set; } = DataIdentifier.Empty;
+        public DataIdentifier ExpectationId { get; private set; }
 
         /// <inheritdoc />
         public void IdentifyExpectation(DataIdentifier identifier) => ExpectationId = identifier;
