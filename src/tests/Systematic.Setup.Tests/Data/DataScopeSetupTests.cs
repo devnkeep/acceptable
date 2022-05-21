@@ -5,7 +5,7 @@
     using NUnit.Framework;
 
     using Systematic.Setup.Data;
-    using Systematic.Setup.Tests.Data.Fixture;
+    using Systematic.Setup.Tests.Fixture;
 
     [TestFixture]
     internal class DataScopeSetupTests

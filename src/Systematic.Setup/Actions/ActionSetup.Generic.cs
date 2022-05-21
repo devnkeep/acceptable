@@ -1,5 +1,6 @@
 ﻿namespace Systematic.Setup.Actions
 {
+    using Systematic.Actions;
     using Systematic.Data;
 
     /// <summary>
@@ -11,5 +12,19 @@
         where TInput : DataItem
         where TOutput : DataItem
     {
+        /// <inheritdoc />
+        protected override ActionContext BuildActionContext()
+        {
+            var actionUnit = BuildUnit();
+            var actionContext = new ActionContext<TInput, TOutput>(actionUnit);
+
+            return actionContext;
+        }
+
+        /// <summary>
+        /// Builds an action unit.
+        /// </summary>
+        /// <returns>An action unit.</returns>
+        protected abstract ActionUnit<TInput, TOutput> BuildUnit();
     }
 }

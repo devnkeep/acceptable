@@ -1,4 +1,4 @@
-﻿namespace Systematic.Setup.Tests.Data.Fixture
+﻿namespace Systematic.Setup.Tests.Fixture
 {
     using Systematic.Data;
 

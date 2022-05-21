@@ -1,6 +1,8 @@
 ﻿namespace Systematic.Setup.Text.Assertions
 {
+    using Systematic.Assertions;
     using Systematic.Setup.Assertions;
+    using Systematic.Text.Assertions;
     using Systematic.Text.Data;
 
     /// <summary>
@@ -10,5 +12,8 @@
     {
         /// <inheritdoc/>
         public override string Name { get; } = "Text not empty";
+
+        /// <inheritdoc />
+        protected override PlainAssertion<TextData> BuildAssertion() => new TextNotEmptyAssertion();
     }
 }
