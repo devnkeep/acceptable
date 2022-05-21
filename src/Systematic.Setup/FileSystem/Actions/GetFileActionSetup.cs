@@ -1,4 +1,4 @@
-﻿namespace Systematic.Setup.FileSystem
+﻿namespace Systematic.Setup.FileSystem.Actions
 {
     using Systematic.FileSystem.Data;
     using Systematic.Setup.Actions;

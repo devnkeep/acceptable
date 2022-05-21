@@ -18,7 +18,7 @@
         public string Name { get; set; } = string.Empty;
 
         /// <inheritdoc />
-        public ScopeIdentifier Scope { get; set; } = ScopeIdentifier.New;
+        public ScopeIdentifier Scope { get; set; }
 
         /// <inheritdoc />
         public IReadOnlyCollection<IStepSetup> Steps => _steps;

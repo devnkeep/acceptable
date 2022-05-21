@@ -1,4 +1,4 @@
-﻿namespace Systematic.Setup.Text
+﻿namespace Systematic.Setup.Text.Assertions
 {
     using Systematic.Setup.Assertions;
     using Systematic.Text.Data;
