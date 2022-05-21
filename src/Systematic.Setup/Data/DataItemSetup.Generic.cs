@@ -9,5 +9,13 @@
     public abstract class DataItemSetup<TDataItem> : DataItemSetup
         where TDataItem : DataItem
     {
+        /// <inheritdoc />
+        protected override DataItem BuildItem() => DoBuildItem();
+
+        /// <summary>
+        /// Builds a data item of the <typeparamref name="TDataItem"/> type.
+        /// </summary>
+        /// <returns>A data item of the <typeparamref name="TDataItem"/> type.</returns>
+        protected abstract TDataItem DoBuildItem();
     }
 }

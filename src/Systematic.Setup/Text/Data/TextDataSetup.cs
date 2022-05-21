@@ -1,5 +1,7 @@
 ﻿namespace Systematic.Setup.Text.Data
 {
+    using System;
+
     using Systematic.Setup.Data;
     using Systematic.Text.Data;
 
@@ -12,5 +14,13 @@
         /// Gets or sets a text value.
         /// </summary>
         public string? Text { get; set; }
+
+        /// <inheritdoc />
+        protected override TextData DoBuildItem()
+        {
+            return Text is null
+                ? throw new InvalidOperationException("A text value must be set.")
+                : new TextData(Text);
+        }
     }
 }

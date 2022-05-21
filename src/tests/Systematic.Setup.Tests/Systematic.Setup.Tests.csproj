@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Systematic.Setup\Systematic.Setup.csproj" />
+  </ItemGroup>
+
+</Project>
