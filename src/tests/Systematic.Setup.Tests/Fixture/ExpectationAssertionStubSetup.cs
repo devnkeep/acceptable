@@ -1,8 +1,7 @@
-﻿namespace Systematic.Setup.Tests.Assertions.Fixture
+﻿namespace Systematic.Setup.Tests.Fixture
 {
     using Systematic.Assertions;
     using Systematic.Setup.Assertions;
-    using Systematic.Setup.Tests.Fixture;
 
     internal class ExpectationAssertionStubSetup : ExpectationAssertionSetup<DataItemStub>
     {

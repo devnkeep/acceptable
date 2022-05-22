@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
 
+    using Systematic.Data.Scope;
     using Systematic.Setup.Actions;
 
     /// <summary>
@@ -18,5 +19,12 @@
         /// Gets setups of actions in a step.
         /// </summary>
         IReadOnlyCollection<IActionSetup> Actions { get; }
+
+        /// <summary>
+        /// Builds a step from the current setup.
+        /// </summary>
+        /// <param name="scope">A data scope.</param>
+        /// <returns>A step.</returns>
+        Step Build(IDataScope scope);
     }
 }

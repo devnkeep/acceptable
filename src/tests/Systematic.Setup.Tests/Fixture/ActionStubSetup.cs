@@ -1,10 +1,9 @@
-﻿namespace Systematic.Setup.Tests.Actions.Fixture
+﻿namespace Systematic.Setup.Tests.Fixture
 {
     using Systematic.Actions;
     using Systematic.Setup.Actions;
-    using Systematic.Setup.Tests.Fixture;
 
-    internal class ActionStubSetup : ActionSetup<DataItemStub, DataItemStub>
+    internal class ActionStubSetup : ActionSetup<DataItemStub, DataItemStub>, ISimpleActionSetup
     {
         public override string Name { get; } = nameof(ActionStub);
 

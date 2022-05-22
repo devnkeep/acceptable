@@ -1,10 +1,9 @@
-﻿namespace Systematic.Setup.Tests.Assertions.Fixture
+﻿namespace Systematic.Setup.Tests.Fixture
 {
     using System.Threading;
     using System.Threading.Tasks;
 
     using Systematic.Assertions;
-    using Systematic.Setup.Tests.Fixture;
 
     internal class ExpectationAssertionStub : ExpectationAssertion<DataItemStub>
     {

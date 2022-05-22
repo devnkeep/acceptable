@@ -6,7 +6,6 @@
 
     using Systematic.Assertions;
     using Systematic.Data.Scope;
-    using Systematic.Setup.Tests.Assertions.Fixture;
     using Systematic.Setup.Tests.Fixture;
 
     [TestFixture]
@@ -15,28 +14,32 @@
         [Test]
         public void Build_PlainAssertion_SetupComplete_ShouldReturn()
         {
+            var scope = new DataScope();
             var setup = new PlainAssertionStubSetup { InputId = "inputData" };
 
-            var actual = setup.Build(new DataScope());
+            var actual = setup.Build(scope);
 
             Assert.NotNull(actual);
             Assert.AreEqual(setup.InputId, actual.InputId);
+            Assert.AreSame(scope, actual.Scope);
         }
 
         [Test]
         public void Build_ExpectationAssertion_SetupComplete_ShouldReturn()
         {
+            var scope = new DataScope();
             var setup = new ExpectationAssertionStubSetup
             {
                 InputId = "inputData",
                 ExpectationId = "expectationId"
             };
 
-            var actual = (ExpectationAssertionContext<DataItemStub>)setup.Build(new DataScope());
+            var actual = (ExpectationAssertionContext<DataItemStub>)setup.Build(scope);
 
             Assert.NotNull(actual);
             Assert.AreEqual(setup.InputId, actual.InputId);
             Assert.AreEqual(setup.ExpectationId, actual.ExpectationId);
+            Assert.AreSame(scope, actual.Scope);
         }
 
         [Test]

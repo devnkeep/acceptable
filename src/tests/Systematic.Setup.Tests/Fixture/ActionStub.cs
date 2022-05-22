@@ -1,10 +1,9 @@
-﻿namespace Systematic.Setup.Tests.Actions.Fixture
+﻿namespace Systematic.Setup.Tests.Fixture
 {
     using System.Threading;
     using System.Threading.Tasks;
 
     using Systematic.Actions;
-    using Systematic.Setup.Tests.Fixture;
 
     internal class ActionStub : ActionUnit<DataItemStub, DataItemStub>
     {
