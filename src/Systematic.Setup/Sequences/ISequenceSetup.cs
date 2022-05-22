@@ -23,5 +23,11 @@
         /// Gets or sets an ID of a data scope in which the sequence resides.
         /// </summary>
         ScopeIdentifier Scope { get; set; }
+
+        /// <summary>
+        /// Builds a sequence based on the current setup.
+        /// </summary>
+        /// <returns>A sequence.</returns>
+        Sequence Build();
     }
 }

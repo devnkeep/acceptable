@@ -35,5 +35,30 @@
         /// </summary>
         /// <param name="sequence">A sequence setup.</param>
         public void RemoveSequence(ISequenceSetup sequence) => _sequences.Remove(sequence);
+
+        /// <summary>
+        /// Builds a test case based on the current setup.
+        /// </summary>
+        /// <returns>A test case.</returns>
+        public Case Build()
+        {
+            var testCase = new Case(Name);
+
+            var sequences = BuildSequences();
+            foreach (var sequence in sequences)
+                testCase.AddSequence(sequence);
+
+            return testCase;
+        }
+
+        /// <summary>
+        /// Builds sequences in the case from their setup.
+        /// </summary>
+        /// <returns>Sequences in the case.</returns>
+        private IEnumerable<Sequence> BuildSequences()
+        {
+            foreach (var setup in Sequences)
+                yield return setup.Build();
+        }
     }
 }
