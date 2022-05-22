@@ -8,7 +8,7 @@
     using Systematic.Setup.Tests.Fixture;
 
     [TestFixture]
-    internal class ActionSetupTests
+    internal class SimpleActionSetupTests
     {
         [Test]
         public void Build_SetupComplete_ShouldReturn()

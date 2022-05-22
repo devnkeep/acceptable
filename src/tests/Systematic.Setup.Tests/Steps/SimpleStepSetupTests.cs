@@ -7,7 +7,7 @@
     using Systematic.Setup.Tests.Fixture;
 
     [TestFixture]
-    internal class StepSetupTests
+    internal class SimpleStepSetupTests
     {
         [Test]
         public void Build_Empty_ShouldReturnEmpty()
