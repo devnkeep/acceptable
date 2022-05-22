@@ -12,7 +12,7 @@
     public class ReadFileTextActionSetup : SimpleActionSetup<FileData, TextData>
     {
         /// <inheritdoc />
-        public override string Name { get; } = "Read file as text";
+        public override string Name => ReadFileTextAction.ActionName;
 
         /// <inheritdoc />
         protected override ActionUnit<FileData, TextData> BuildUnit() => new ReadFileTextAction();

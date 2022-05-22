@@ -12,8 +12,13 @@
     /// </summary>
     public class SendRequestAction : HttpActionUnit<RequestData, TextData>
     {
+        /// <summary>
+        /// The name of the action.
+        /// </summary>
+        public const string ActionName = "Send HTTP request";
+
         /// <inheritdoc />
-        public override string Name { get; } = "Send HTTP request";
+        public override string Name => ActionName;
 
         /// <inheritdoc />
         public override async Task<TextData> PerformAsync(RequestData input, IHttpClientWrapper client, CancellationToken cancellationToken)

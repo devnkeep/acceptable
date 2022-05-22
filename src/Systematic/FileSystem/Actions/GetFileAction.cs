@@ -12,8 +12,13 @@
     /// </summary>
     public class GetFileAction : ActionUnit<PathData, FileData>
     {
-        /// <inheritdoc/>
-        public override string Name { get; } = "Get file info";
+        /// <summary>
+        /// The name of the action.
+        /// </summary>
+        public const string ActionName = "Get file info";
+
+        /// <inheritdoc />
+        public override string Name => ActionName;
 
         /// <inheritdoc />
         public override Task<FileData> PerformAsync(PathData input, CancellationToken cancellationToken)

@@ -10,7 +10,7 @@
     public class SendRequestActionSetup : HttpActionSetup<RequestData, TextData>
     {
         /// <inheritdoc />
-        public override string Name { get; } = "Send HTTP request";
+        public override string Name => SendRequestAction.ActionName;
 
         /// <inheritdoc />
         protected override HttpActionUnit<RequestData, TextData> BuildUnit() => new SendRequestAction();

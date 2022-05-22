@@ -11,8 +11,13 @@
     /// </summary>
     public class TextNotEmptyAssertion : PlainAssertion<TextData>
     {
+        /// <summary>
+        /// The name of the assertion.
+        /// </summary>
+        public const string AssertionName = "Text not empty";
+
         /// <inheritdoc />
-        public override string Name { get; } = "Text not empty";
+        public override string Name => AssertionName;
 
         /// <inheritdoc />
         public override Task<AssertionResult> AssertAsync(TextData input, CancellationToken cancellationToken)

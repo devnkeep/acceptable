@@ -11,10 +11,15 @@
     /// </summary>
     public class TextEqualsAssertion : ExpectationAssertion<TextData>
     {
-        /// <inheritdoc/>
-        public override string Name { get; } = "Text equals";
+        /// <summary>
+        /// The name of the assertion.
+        /// </summary>
+        public const string AssertionName = "Text equals";
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
+        public override string Name => AssertionName;
+
+        /// <inheritdoc />
         public override Task<AssertionResult> AssertAsync(TextData expectation, TextData input, CancellationToken cancellationToken)
         {
             var result = expectation.Text.Equals(input.Text)

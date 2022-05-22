@@ -10,8 +10,8 @@
     /// </summary>
     public class GetFileActionSetup : SimpleActionSetup<PathData, FileData>
     {
-        /// <inheritdoc/>
-        public override string Name { get; } = "Get file info";
+        /// <inheritdoc />
+        public override string Name => GetFileAction.ActionName;
 
         /// <inheritdoc />
         protected override ActionUnit<PathData, FileData> BuildUnit() => new GetFileAction();

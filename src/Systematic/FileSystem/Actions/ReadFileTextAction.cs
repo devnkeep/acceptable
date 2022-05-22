@@ -13,8 +13,13 @@
     /// </summary>
     public class ReadFileTextAction : ActionUnit<FileData, TextData>
     {
+        /// <summary>
+        /// The name of the action.
+        /// </summary>
+        public const string ActionName = "Read file as text";
+
         /// <inheritdoc />
-        public override string Name { get; } = "Read file as text";
+        public override string Name => ActionName;
 
         /// <inheritdoc />
         public override Task<TextData> PerformAsync(FileData input, CancellationToken cancellationToken)

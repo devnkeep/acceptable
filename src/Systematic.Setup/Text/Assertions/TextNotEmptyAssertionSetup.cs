@@ -10,8 +10,8 @@
     /// </summary>
     public class TextNotEmptyAssertionSetup : AssertionSetup<TextData>
     {
-        /// <inheritdoc/>
-        public override string Name { get; } = "Text not empty";
+        /// <inheritdoc />
+        public override string Name => TextNotEmptyAssertion.AssertionName;
 
         /// <inheritdoc />
         protected override PlainAssertion<TextData> BuildAssertion() => new TextNotEmptyAssertion();

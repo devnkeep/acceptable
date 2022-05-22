@@ -10,8 +10,8 @@
     /// </summary>
     public class TextEqualsAssertionSetup : ExpectationAssertionSetup<TextData>
     {
-        /// <inheritdoc/>
-        public override string Name { get; } = "Text equals";
+        /// <inheritdoc />
+        public override string Name => TextEqualsAssertion.AssertionName;
 
         /// <inheritdoc />
         protected override ExpectationAssertion<TextData> BuildAssertion() => new TextEqualsAssertion();
