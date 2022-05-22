@@ -3,7 +3,7 @@
     using Systematic.Actions;
     using Systematic.Setup.Actions;
 
-    internal class ActionStubSetup : ActionSetup<DataItemStub, DataItemStub>, ISimpleActionSetup
+    internal class ActionStubSetup : SimpleActionSetup<DataItemStub, DataItemStub>
     {
         public override string Name { get; } = nameof(ActionStub);
 

@@ -1,5 +1,6 @@
 ﻿namespace Systematic.Setup.Steps
 {
+    using Systematic.Data.Scope;
     using Systematic.Setup.Actions;
 
     /// <summary>
@@ -7,5 +8,11 @@
     /// </summary>
     public interface ISimpleStepSetup : IStepSetup<ISimpleActionSetup>
     {
+        /// <summary>
+        /// Builds a simple step from the current setup.
+        /// </summary>
+        /// <param name="scope">A data scope.</param>
+        /// <returns>A simple step.</returns>
+        Step Build(IDataScope scope);
     }
 }

@@ -9,7 +9,7 @@
     /// <summary>
     /// A setup of an action to read file content as a text.
     /// </summary>
-    public class ReadFileTextActionSetup : ActionSetup<FileData, TextData>, ISimpleActionSetup
+    public class ReadFileTextActionSetup : SimpleActionSetup<FileData, TextData>
     {
         /// <inheritdoc />
         public override string Name { get; } = "Read file as text";

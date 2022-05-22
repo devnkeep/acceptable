@@ -1,8 +1,5 @@
 ﻿namespace Systematic.Setup.AssertionSteps
 {
-    using System.Collections.Generic;
-
-    using Systematic.Actions;
     using Systematic.Data.Scope;
     using Systematic.Setup.Actions;
     using Systematic.Setup.Steps;
@@ -12,20 +9,31 @@
     /// </summary>
     public class SimpleAssertionStepSetup : AssertionStepSetup, ISimpleStepSetup
     {
-        /// <inheritdoc />
-        public void AddAction(ISimpleActionSetup setup) => MutableActions.Add(setup);
+        /// <summary>
+        /// An underlying simple step setup.
+        /// </summary>
+        private readonly ISimpleStepSetup _step = new SimpleStepSetup();
 
         /// <inheritdoc />
-        public void RemoveAction(ISimpleActionSetup setup) => MutableActions.Remove(setup);
+        protected override IStepSetup Step => _step;
 
         /// <inheritdoc />
-        protected override IEnumerable<ActionContext> BuildActions(IReadableScope scope)
+        public void AddAction(ISimpleActionSetup setup) => _step.AddAction(setup);
+
+        /// <inheritdoc />
+        public void RemoveAction(ISimpleActionSetup setup) => _step.RemoveAction(setup);
+
+        /// <inheritdoc />
+        public Step Build(IDataScope scope)
         {
-            foreach (var actionSetup in Actions)
-            {
-                var action = actionSetup.Build(scope);
-                yield return action;
-            }
+            var step = _step.Build(scope);
+            var assertionStep = ToAssertionStep(step);
+
+            var assertions = BuildAssertions(scope);
+            foreach (var assertion in assertions)
+                assertionStep.AddAssertion(assertion);
+
+            return assertionStep;
         }
     }
 }

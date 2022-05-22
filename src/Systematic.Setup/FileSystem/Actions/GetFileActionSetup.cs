@@ -8,7 +8,7 @@
     /// <summary>
     /// A setup of an action to get information about a file.
     /// </summary>
-    public class GetFileActionSetup : ActionSetup<PathData, FileData>, ISimpleActionSetup
+    public class GetFileActionSetup : SimpleActionSetup<PathData, FileData>
     {
         /// <inheritdoc/>
         public override string Name { get; } = "Get file info";

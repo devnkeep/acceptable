@@ -1,18 +1,17 @@
 ﻿namespace Systematic.Setup.AssertionSteps
 {
-    using System;
     using System.Collections.Generic;
 
-    using Systematic;
     using Systematic.Assertions;
     using Systematic.Data.Scope;
+    using Systematic.Setup.Actions;
     using Systematic.Setup.Assertions;
     using Systematic.Setup.Steps;
 
     /// <summary>
     /// A setup of an assertion step.
     /// </summary>
-    public abstract class AssertionStepSetup : StepSetup, IAssertionStepSetup
+    public abstract class AssertionStepSetup : IAssertionStepSetup
     {
         /// <summary>
         /// Setups of assertions.
@@ -23,34 +22,48 @@
         public IReadOnlyCollection<IAssertionSetup> Assertions => _assertions;
 
         /// <inheritdoc />
+        public string Name
+        {
+            get => Step.Name;
+            set => Step.Name = value;
+        }
+
+        /// <inheritdoc />
+        public IReadOnlyCollection<IActionSetup> Actions => Step.Actions;
+
+        /// <summary>
+        /// Gets an underlying step setup that contains actions necessary for an assertion.
+        /// </summary>
+        protected abstract IStepSetup Step { get; }
+
+        /// <inheritdoc />
         public void AddAssertion(IAssertionSetup setup) => _assertions.Add(setup);
 
         /// <inheritdoc />
         public void RemoveAssertion(IAssertionSetup setup) => _assertions.Remove(setup);
 
-        /// <inheritdoc />
-        public override Step Build(IDataScope scope)
+        /// <summary>
+        /// Converts a <see cref="Systematic.Step"/> instance to a <see cref="AssertionStep"/> instance.
+        /// </summary>
+        /// <param name="step">A step instance.</param>
+        /// <returns>An assertion step instance.</returns>
+        protected static AssertionStep ToAssertionStep(Step step)
         {
-            var step = base.Build(scope);
-            if (step is not AssertionStep assertionStep)
-                throw new InvalidOperationException($"The step instance has an invalid type of '{step.GetType()}'.");
+            var assertionStep = new AssertionStep(step.Name);
+            assertionStep.SpecifyScope(step.Scope);
 
-            var assertions = BuildAssertions(scope);
-            foreach (var assertion in assertions)
-                assertionStep.AddAssertion(assertion);
+            foreach (var action in step.Actions)
+                assertionStep.AddAction(action);
 
-            return step;
+            return assertionStep;
         }
-
-        /// <inheritdoc />
-        protected override Step CreateStep() => new AssertionStep(Name);
 
         /// <summary>
         /// Builds assertions in the step from their setups.
         /// </summary>
         /// <param name="scope">A data scope.</param>
         /// <returns>A collection of assertion contexts.</returns>
-        private IEnumerable<AssertionContext> BuildAssertions(IDataScope scope)
+        protected IEnumerable<AssertionContext> BuildAssertions(IDataScope scope)
         {
             foreach (var assertionSetup in Assertions)
             {
