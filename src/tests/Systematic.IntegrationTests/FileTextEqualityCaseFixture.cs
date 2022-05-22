@@ -106,7 +106,7 @@
 
         private static AssertionContext CreateTextNotEmptyAssertion(IDataScope scope)
         {
-            var assertion = new AssertionContext<TextData>(new TextNotEmptyAssertion());
+            var assertion = new PlainAssertionContext<TextData>(new TextNotEmptyAssertion());
             assertion.SpecifyScope(scope);
             assertion.IdentifyInput("text");
 

@@ -3,7 +3,7 @@
     using Systematic.Assertions;
     using Systematic.Setup.Assertions;
 
-    internal class PlainAssertionStubSetup : AssertionSetup<DataItemStub>
+    internal class PlainAssertionStubSetup : PlainAssertionSetup<DataItemStub>
     {
         public override string Name { get; } = nameof(PlainAssertionStub);
 

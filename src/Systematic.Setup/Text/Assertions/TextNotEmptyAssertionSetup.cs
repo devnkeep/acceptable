@@ -8,7 +8,7 @@
     /// <summary>
     /// A setup of an assertion used to check if a text is not empty.
     /// </summary>
-    public class TextNotEmptyAssertionSetup : AssertionSetup<TextData>
+    public class TextNotEmptyAssertionSetup : PlainAssertionSetup<TextData>
     {
         /// <inheritdoc />
         public override string Name => TextNotEmptyAssertion.AssertionName;

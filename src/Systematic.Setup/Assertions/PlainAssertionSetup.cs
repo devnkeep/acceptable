@@ -7,14 +7,14 @@
     /// Describes a generic assertion setup specifying input data type.
     /// </summary>
     /// <typeparam name="TInput">A type of assertion input data.</typeparam>
-    public abstract class AssertionSetup<TInput> : AssertionSetup
+    public abstract class PlainAssertionSetup<TInput> : AssertionSetup
         where TInput : DataItem
     {
         /// <inheritdoc />
         protected override AssertionContext BuildAssertionContext()
         {
             var assertion = BuildAssertion();
-            var assertionContext = new AssertionContext<TInput>(assertion);
+            var assertionContext = new PlainAssertionContext<TInput>(assertion);
 
             return assertionContext;
         }
