@@ -13,11 +13,6 @@
     public abstract class SequenceSetup : ISequenceSetup
     {
         /// <summary>
-        /// Setups of steps in the sequence setup.
-        /// </summary>
-        private readonly List<IStepSetup> _steps = new List<IStepSetup>();
-
-        /// <summary>
         /// A data scope setup registry.
         /// </summary>
         private readonly IDataScopeSetupRegistry _scopes;
@@ -35,12 +30,12 @@
         public ScopeIdentifier Scope { get; set; }
 
         /// <inheritdoc />
-        public IReadOnlyCollection<IStepSetup> Steps => _steps;
+        public IReadOnlyCollection<IStepSetup> Steps => MutableSteps;
 
         /// <summary>
         /// Gets setups of steps in the sequence that can be modified in a derived class.
         /// </summary>
-        protected List<IStepSetup> MutableSteps => _steps;
+        protected List<IStepSetup> MutableSteps { get; } = new List<IStepSetup>();
 
         /// <inheritdoc />
         public Sequence Build()

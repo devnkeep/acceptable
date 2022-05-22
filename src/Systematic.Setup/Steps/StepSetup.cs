@@ -9,20 +9,15 @@
     /// </summary>
     public abstract class StepSetup : IStepSetup
     {
-        /// <summary>
-        /// Setups of actions.
-        /// </summary>
-        private readonly List<IActionSetup> _actions = new List<IActionSetup>();
-
         /// <inheritdoc />
         public string Name { get; set; } = string.Empty;
 
         /// <inheritdoc />
-        public IReadOnlyCollection<IActionSetup> Actions => _actions;
+        public IReadOnlyCollection<IActionSetup> Actions => MutableActions;
 
         /// <summary>
         /// Gets setups of actions in a step that can be modified in a derived class.
         /// </summary>
-        protected List<IActionSetup> MutableActions => _actions;
+        protected List<IActionSetup> MutableActions { get; } = new List<IActionSetup>();
     }
 }
